@@ -112,3 +112,12 @@
 > ***Command***
 
 1. EzUpdate_GetLastError () < 返回 g_cError 信息 >
+
+## EzUpdate.1.3.0.220605_dev
+
+> 突飞猛进
+
+``` text
+1. 添加了特定注册表的 判断存在 以及读写 功能 （虽然没有公开
+2. 完善了 EzUpdate_Init ，多了 ProgramName 参数
+3. 完善了 EzUpdate_Check ， 实现在线是否需要更新。
