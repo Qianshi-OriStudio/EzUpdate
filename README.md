@@ -125,3 +125,17 @@
 1. 添加了特定注册表的 判断存在 以及读写 功能 （虽然没有公开
 2. 完善了 EzUpdate_Init ，多了 ProgramName 参数
 3. 完善了 EzUpdate_Check ， 实现在线是否需要更新。
+
+```
+
+## EzUpdate.1.3.5.220610_dev
+
+> 正在解决多线程下载问题
+
+### ReadMe
+
+> No Any New Something, Just Write Codes About MoreThreadingDownload (But it doesn't work XD )
+
+> Do Not Ask Me," Why Lose Four Version Update ?" I Just Forget To Commit XDDDDDDDDDDDDDD
+
+> If You Know How To MoreThreadingDownload And Only Use Win32Api, Plz Tell Me !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
