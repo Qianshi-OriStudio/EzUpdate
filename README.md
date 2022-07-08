@@ -1,141 +1,47 @@
-# EzUpdate
+# *ReadME*
 
-目录 :
+<a href="#"><img src="https://img.shields.io/badge/Version-Re--1.0.1.220708--beta-brightgreen"></img></a>   <a href="https://github.com/Qianshi-OriStudio/EzUpdate/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Qianshi-OriStudio/EzUpdate"></a>   <a href="https://github.com/Qianshi-OriStudio/EzUpdate/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/Qianshi-OriStudio/EzUpdate"></a>   <a href="https://github.com/Qianshi-OriStudio/EzUpdate/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Qianshi-OriStudio/EzUpdate"></a>   <a href="https://github.com/Qianshi-OriStudio/EzUpdate/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/Qianshi-OriStudio/EzUpdate"></a>  
 
-[TOC]
+<a href="https://space.bilibili.com/439946965"><img src="https://img.shields.io/badge/bilibili-ContactMe-pink" alt="与我联系"></img></a>
 
-> ---------------------------------------
+[toc]
 
-# 介绍
+------
 
-​        本 模块 以 易语言 所编译，不依赖第三方支持库。
+## about
 
-​        本模块不遵循开源协议即不开源，严禁他人对模块进行：反编译、二次贩卖！
+| about EzUpdate                                               |
+| :----------------------------------------------------------- |
+| 你好，开发者。很荣幸能使用此 第三方库 ，此库已重构一次，使代码结构更加清晰明了也让库变得更加易用上手。\n本库还属于 测试版本 ，若您能发现其中里的 bug 或者一些使用上的问题，都可以在 issues 中反馈 :D。 |
+| Hello, developer. Thanks for using this Library .The Library is reconstruct  once time *(sorry, my English is so bad. )*, so that, it makes CodeStructure to be the easiest. Now, Version of the Library is still in *Beta* ,if you find some bugs or problem for using, you can feedback on Github-issues :D. |
 
-## 注意事项
+ ## Public Functions List
 
-​		下载的文件一定要压缩包格式！否则会下载错误！
+| Function     | ReturnType | Paramters                   | About  |
+| ------------ | ---------- | --------------------------- | ------ |
+| EuInitialize | Bool       | ConfigData \< JsonString \> | 初始化 |
 
-# 命令总览
+*For Example*
 
-## Bool EzUpdate_Init ( < FileString >  ConfigFile)
+```easyProgramLanguage
+EuInitialize (json)
+```
 
-***备注***
+Watch Out: json <- stringData is:
 
-初始化模块，仅能初始化一次！
-
-若需要再次修改详见 EzUpdate_UnInit 命令
-
-***参数***
-
-< FileString >  ConfigFile  **配置文件路径**  *详见 [ConfigFile](## ConfigFile)*
-
-## Void EzUpdate_UnInit ()
-
-<div id="VoidEzUpdate_UnInit"> </div>
-
-***备注***
-
-可以在 EzUpdate_UnInit () 后再次使用 EzUpdate_Init 实现重新加载配置文件
-
-## Bool EzUpdate_Check ( < Struc_UpdateINFO > OutputInfo )
-
-***备注***
-
-返回 **真** 则有新更新，否则没有
-
-***参数***
-
-< Struc_UpdateINFO > OutputInfo **获取到的配置信息** *详见 [Struc_UpdateINFO](## Struc_UpdateINFO)*
-
-# 文件配置以及结构格式
-
-## ConfigFile
-
-``` Json
+``` json
 {
-    "t": "Titile",
-    "s": "SubTitle",
-    "e": "Text",
-    "d": "DownLoadUrl",
-    "v": "Version"
+    "ApplicationName": "Name",
+    "updateType": "Type",
+    "urlPath": "GetUrl",
+    "ProcAddress": "\<Address\>"
 }
 ```
 
-## Struc_UpdateINFO ##
+---
 
-``` EasyLanguage
-.版本 2
+| Function       | ReturnType | About    |
+| -------------- | ---------- | -------- |
+| EuIsNewVersion | Bool       | 是否最新 |
 
-.数据类型 Struc_UpdateINFO, 公开
-    .成员 title, 文本型
-    .成员 subtitle, 文本型
-    .成员 text, 文本型
-    .成员 downloadurl, 文本型
-    .成员 version, 文本型
-```
-
-# Dev开发记录
-
-## EzUpdate.1.1.1.220531_dev
-
-> 刚开始的第一个开发版本 功能未集全
-
-***Add***
-
-> ***Command***
-
-1. EzUpdate_Init () < 初始化 >
-2. Ez_Update_ImportUpdateConfig () < 载入配置文件 >
-3. EzUpdate_Check () < 检查 >
-
-> ***GlobalValue***
-
-1. g_cError < 错误信息 >
-
-## EzUpdate.1.2.1.220602_dev
-
-> 进度 + 1
-
-***Add***
-
-> ***Command***
-
-1. EzUpdate_GetInfo () < 在调用 EzUpdate_Check () 之后获取更新信息 >
-
-> ***Structure***
-
-1. Struc_UpdateINFO < 数据结构 >
-
-## EzUpdate.1.2.2.220603_dev
-
-> +1
-
-***Add***
-
-> ***Command***
-
-1. EzUpdate_GetLastError () < 返回 g_cError 信息 >
-
-## EzUpdate.1.3.0.220605_dev
-
-> 突飞猛进
-
-``` text
-1. 添加了特定注册表的 判断存在 以及读写 功能 （虽然没有公开
-2. 完善了 EzUpdate_Init ，多了 ProgramName 参数
-3. 完善了 EzUpdate_Check ， 实现在线是否需要更新。
-
-```
-
-## EzUpdate.1.3.5.220610_dev
-
-> 正在解决多线程下载问题
-
-### ReadMe
-
-> No Any New Something, Just Write Codes About MoreThreadingDownload (But it doesn't work XD )
-
-> Do Not Ask Me," Why Lose Four Version Update ?" I Just Forget To Commit XDDDDDDDDDDDDDD
-
-> If You Know How To MoreThreadingDownload And Only Use Win32Api, Plz Tell Me !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*For Example*
