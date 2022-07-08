@@ -34,7 +34,7 @@ Watch Out: json <- stringData is:
     "ApplicationName": "Name",
     "updateType": "Type",
     "urlPath": "GetUrl",
-    "ProcAddress": "\<Address\>"
+    "ProcAddress": "<Address>"
 }
 ```
 
