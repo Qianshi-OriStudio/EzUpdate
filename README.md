@@ -45,3 +45,75 @@ Watch Out: json <- stringData is:
 | EuIsNewVersion | Bool       | 是否最新 |
 
 *For Example*
+
+``` easyProgramLanguage
+EuIsNewVersion ()
+```
+
+---
+
+| Function      | ReturnType | About    |
+| ------------- | ---------- | -------- |
+| EuApplyUpdate | Bool       | 确认更新 |
+
+*For Example*
+
+``` easyProgramLanguage
+EuApplyUpdate ()
+```
+
+Watch Out: **Do Not Call This Function When You Do Not Call EuIsNewVersion () function to check Is New Version.** 
+
+---
+
+| Function       | ReturnType | About        |
+| -------------- | ---------- | ------------ |
+| EuGetLastError | Int        | 取最新错误值 |
+
+*For Example*
+
+``` easyProgramLanguage
+EuGetLastError ()
+```
+
+Tips: 
+
+If you wanna autoGetError, you can addParamter for **EuInitialize (\< string \>JsonData)** function.
+
+addData:
+
+``` Json
+{
+    "isDebug": "true"
+}
+```
+
+---
+
+| Function             | ReturnType | About                |
+| -------------------- | ---------- | -------------------- |
+| EuGetLastErrorString | String     | 取最新错误文本字符串 |
+
+*For Example*
+
+``` easyProgramLanguage
+EuGetLastErrorString ()
+```
+
+Tips: 
+
+If you wanna autoGetError, you can addParamter for **EuInitialize (\< string \>JsonData)** function.
+
+addData:
+
+``` Json
+{
+    "isDebug": "true"
+}
+```
+
+Oops: 
+
+Language for return string is Chinese ( zh-CN \).      <- Bad English :D . if u wanna know what is real mean, you can translate Chinese sentence.
+
+该函数返回的字符串为中文 \(  zh-CN \)。
