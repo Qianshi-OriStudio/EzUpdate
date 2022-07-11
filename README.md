@@ -32,7 +32,7 @@ Watch Out: json <- stringData is:
 ``` json
 {
     "ApplicationName": "Name",
-    "updateType": "Type",
+    "downloadType": "Type",
     "urlPath": "GetUrl",
     "ProcAddress": "<Address>"
 }
@@ -117,3 +117,29 @@ Oops:
 Language for return string is Chinese ( zh-CN \).      <- Bad English :D . if u wanna know what is real mean, you can translate Chinese sentence.
 
 该函数返回的字符串为中文 \(  zh-CN \)。
+
+## explain
+
+About \[\< string \>ConfigJsonData \]Param of EuInitialize () function:
+
+**downlaodType**
+
+| downloadCount | ThreadCount | 断点续传 | 多线程下载 | Type               |
+| ------------- | ----------- | -------- | ---------- | ------------------ |
+| x > 0         | x > 0       | ❌        | ✔          | dCN_tCN ( N > 0 )  |
+| x = 1         | x > 1       | ❌        | ✔          | dC1_tCN ( N > 1 )  |
+| x >=1         | x = 1       | ✔        | ❌          | dCN_tC1 ( N >= 1 ) |
+
+
+
+### change Config
+
+if you Wanna change Config, You Can Call EUInitialize () function again.
+
+
+
+
+
+## FaQ
+
+[Click Me To Official WebSite\~]("[Library - EzUpdate (qianshi-oristudio.github.io)](https://qianshi-oristudio.github.io/EzUpdateHomePage/)")
